@@ -33,31 +33,149 @@
             </div>
             <div class="content"> 
                 <div class="content-left">
+                    <div class="content-left-title">
+                        <input type="text" id="searchInput">
+                        <button type="button" id="searchBtn">查找商品</button>
+                    </div>
+                    <div class="content-left-middle"  id="cashier" >
+
+                        <div class="priceInformation" >
+                            <div class="priceInformation-left">
+                                <div class="priceInformation-title">
+                                    <span>澳大利亚纯牛奶</span>
+                                </div>
+                                <div class="priceInformation-middle">
+                                    <span>￥74.00</span>
+                                    <span>折扣：￥2.00</span>
+                                    <span>会员价：￥72.00</span>
+                                </div>
+                                <div class="priceInformation-bottom">
+                                    <span>小计：￥</span>
+                                    <span class="Milk-subtotal">72.00</span>
+                                </div>
+                            </div>
+                            <div class="priceInformation-right">
+                                <button class="price-button price-button-subtract price-number-subtract-btn" id="Milk-subtract" >-</button>
+                                <span class="price-number" >1</span>
+                                <button class="price-button  price-button-add price-number-add-btn" id="Milk-add">+</button>
+                            </div>
+                        </div>
+    
+                        <div class="priceInformation">
+                            <div class="priceInformation-left">
+                                <div class="priceInformation-title">
+                                    <span>可口可乐</span>
+                                </div>
+                                <div class="priceInformation-middle">
+                                    <span>￥3.50</span>
+                                    <span>折扣：￥0.50</span>
+                                    <span>会员价：￥3.00</span>
+                                </div>
+                                <div class="priceInformation-bottom">
+                                    <span>小计：</span>
+                                    <span class="Coke-subtotal">3.00</span>
+                                </div>
+                            </div>
+                            <div class="priceInformation-right">
+                                <button class="price-button price-button-subtract price-number-subtract-btn" id="Coke-subtract">-</button>
+                                <span class="price-number">1</span>
+                                <button class="price-button  price-button-add price-number-add-btn" id="Coke-add">+</button>
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <div class="content-left-bottom">
+                        <div class="bottom-top">
+                            <button>整单取消</button>
+                            <button>挂单</button>
+                        </div>
+                        <div class="bottom-middle">
+                            <div>
+                                <span>优惠</span>
+                                <span>0.00</span>
+                            </div>
+                            <div class="bottom-middle-float">
+                                <div>
+                                    <span>商品总数</span>
+                                    <span>6件</span>
+                                </div>
+                                <div>
+                                    <span>合计</span>
+                                    <span class="float-span">169.50</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom-bottom">
+                            <button>结算</button>
+                        </div>
+
+                    </div>
+
                 </div>
                 <div class="content-right">
-                    <div class="title">
-                        <ul class="ul-float">
-                            <li>水果</li>
-                            <li>蔬菜</li>
-                            <li>肉禽</li>
-                            <li>海鲜</li>
-                            <li>面点</li>
-                            <li>乳品</li>
-                            <li>烘培</li>
-                            <li>粮油调味</li>
-                            <li>水果</li>
-                            <li>蔬菜</li>
-                            <li>肉禽</li>
-                            <li>海鲜</li>
-                            <li>肉禽</li>
-                            <li>海鲜</li>
-                            <li>面点</li>
-                            <li>乳品</li>
-                            <li>烘培</li>
-                        </ul>
+                    <div class="right-title">
+                        <div class="right-title-ul">
+                            <ul class="ul-float">
+                                <li>水果</li>
+                                <li>蔬菜</li>
+                                <li>肉禽</li>
+                                <li>海鲜</li>
+                                <li>面点</li>
+                                <li>乳品</li>
+                                <li>烘培</li>
+                                <li>粮油调味</li>
+                                <li>水果</li>
+                                <li>蔬菜</li>
+                                <li>肉禽</li>
+                                <li>海鲜</li>
+                                <li>肉禽</li>
+                                <li>海鲜</li>
+                                <li>面点</li>
+                                <li>乳品</li>
+                                <li>烘培</li>
+                            </ul>
+                        </div>
+                        <div class="right-title-btn">
+                            <button>无码商品</button>
+                        </div>
                     </div>
-                    <div class="content">
+                    <div class="right-content">
 
+                        <div class="content-container">
+                            <div class="container-img">
+                                <img src="img/Milk-img.png" alt="">
+                            </div>
+                            <div class="container-content">
+                                <div class="container-content-title" >
+                                    <a><span id="Milk">澳大利亚牛奶</span></a>
+                                </div>
+                                <div class="container-content-specification">
+                                    <span>单规格</span>
+                                </div>
+                                <div class="price">
+                                    <span>￥72.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-container" >
+                            <div class="container-img">
+                                <img src="img/coke-img.png" alt="">
+                            </div>
+                            <div class="container-content">
+                                <div class="container-content-title">
+                                    <a href="#">
+                                        <span id="Coke">可口可乐</span>
+                                    </a>
+                                </div>
+                                <div class="container-content-specification">
+                                    <span>单规格</span>
+
+                                </div>
+                                <div class="price">
+                                    <span>￥3.00</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -66,4 +184,5 @@
 
     </div>
 </body>
+<script src="index.js"></script>
 </html>
