@@ -198,14 +198,14 @@ html,body{
     display: flex;
 }
 .bottom-middle-float :first-child{
-    flex: 0.7;
+    flex: 0.6;
 }
 .bottom-middle-float :last-child{
-    flex: 0.2;
+    flex: 0.4;
 }
 .bottom-middle-float :last-child .float-span{
     color: rgb(192, 87, 87);
-    font-size: 14px;
+    font-size: 15px;
 }
 .bottom-bottom{
     height:30%;

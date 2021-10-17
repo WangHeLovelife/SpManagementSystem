@@ -10,6 +10,18 @@ let commodity =[
         Name:'澳大利亚牛奶',
         price:74.00,
         vipPrice:72.00
+    },
+    {
+        name:'XueBi',
+        Name:'雪碧',
+        price:3.50,
+        vipPrice:3.00
+    },
+    {
+        name:'MeiNianDa',
+        Name:'美年达',
+        price:3.50,
+        vipPrice:3.00
     }
 ]
 
@@ -28,6 +40,7 @@ function contentListener(){
 }
 
 commodityASListener()
+
 // 监听收银台加减按钮
 function commodityASListener(){
     let Btns = document.querySelectorAll('.priceInformation-right');
@@ -35,6 +48,8 @@ function commodityASListener(){
         Btns[i].addEventListener('click',function(e) {
             if(e.target.id !=0){
                 changeCommodityNumber(e.target)
+                // 每点击一次加减按钮就调用一次底部的商品信息
+                bottomPrice()
             }
         })
     }
@@ -46,11 +61,23 @@ searchBtn.addEventListener('click',function(e){
     searchCommodity()
 })
 
+
+//监听整单取消按钮
+let cancelChoiceBtn = document.querySelector('#cancelChoiceBtn');
+cancelChoiceBtn.addEventListener('click',cancelChoice);
+
+// 整单取消按钮
+function cancelChoice() {
+    let cashier = document.querySelector('#cashier');
+    cashier.innerHTML='';
+    bottomPrice()
+}
+
+
 // 搜索商品
 function searchCommodity() {
     let searchInput = document.querySelector('#searchInput');
     let userInput = searchInput.value;
-    console.log(userInput)
     for(let i=0; i<commodity.length; i++){
         if(commodity[i].Name == userInput){
             
@@ -91,6 +118,7 @@ function price(e,symbol){
     let selectNumber = e.id.indexOf('-')
     let commodityName = e.id.substring(0, selectNumber);
     let commodityPrice = ePParent.querySelector(`.${commodityName}-subtotal`)
+    
     for(let i=0;i<commodity.length;i++){
 
         if(commodity[i].name == commodityName){
@@ -102,6 +130,31 @@ function price(e,symbol){
             }
         }
     }
+
+}
+
+bottomPrice();
+// 底部商品金额和价格
+function bottomPrice(){
+    let Number = 0;
+    let Money = 0;
+    let commodityNumber = document.querySelectorAll('.priceInformation');
+
+    for(let i = 0; i <commodityNumber.length; i++) {
+        let number = +commodityNumber[i].querySelector('.price-number').textContent;
+        let money = +commodityNumber[i].querySelector('.priceInformation-bottom').children[1].textContent;
+        Number +=number;
+        Money += money;
+    }
+    
+    renderBottomPrice(Number, Money);
+}
+// 底部商品金额数据渲染
+function renderBottomPrice(number,money) {
+    let numberDom = document.querySelector('#commodityNumber')
+    let priceDom = document.querySelector('#commodityPrice')
+    numberDom.textContent = `${number}件`
+    priceDom.textContent = money
 
 }
 
@@ -167,6 +220,7 @@ function renderContent(name){
             </div>
          `
          commodityASListener()
+         bottomPrice()
          }
      }
     
